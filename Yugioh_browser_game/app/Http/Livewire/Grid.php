@@ -3,11 +3,25 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
+// use Illuminate\Support\Facades\Storage;
 
 class Grid extends Component
 {
+    use WithFileUploads;
+
     public $count = 0;
-    //public User $user;
+    public $photo;
+
+    public function save()
+    {
+        // $this->validate([
+        //     'photo' => 'image|max:1024', // 1MB Max
+        // ]);
+
+        $this->photo->store('photos');
+        $this->photo = "";
+    }
 
     public function increment()
     {
