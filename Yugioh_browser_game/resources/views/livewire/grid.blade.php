@@ -1,9 +1,9 @@
-<div>
+<div class="bg-blue-900">
     <p>counter</p>
    
     <h1>{{ $count }}</h1>
     <div>
-      <button wire:click="increment()">+</button>
+      <button wire:click="increment()" class="animate-spin">+</button>
       <button wire:click="decrement()">-</button>
       <div wire:loading.inline>
           Processing Add....
