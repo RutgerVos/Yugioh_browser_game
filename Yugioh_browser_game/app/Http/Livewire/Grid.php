@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 // use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class Grid extends Component
 {
@@ -19,7 +22,7 @@ class Grid extends Component
         //     'photo' => 'image|max:1024', // 1MB Max
         // ]);
 
-        $this->photo->store('photos');
+        $this->photo->storeAs('photos', 'random.png');
         $this->photo = "";
     }
 
