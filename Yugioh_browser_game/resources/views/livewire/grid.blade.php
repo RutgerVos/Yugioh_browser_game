@@ -1,5 +1,8 @@
 <div class="bg-blue-900">
-    <p>counter</p>
+<!-- <div wire:poll.keep-alive>
+    Current time: {{ now() }}
+</div> -->
+    <p class="font-italic">counter</p>
    
     <h1>{{ $count }}</h1>
     <div>
@@ -9,11 +12,17 @@
           Processing Add....
       </div>
     </div>
-<form wire:submit.prevent="save">
-    <input type="file" wire:model="photo">
+    <form wire:submit.prevent="save">
+        <!-- <div wire:loading wire:target="photo">Uploading...</div> -->
+        @if ($photo)
+            Photo Preview:
+            <img src="{{ $photo->temporaryUrl() }}" width="50" height="60">
+        @endif
+        <input type="file" wire:model="photo" name="photo">
 
-    @error('photo') <span class="error">{{ $message }}</span> @enderror
+        @error('photo') <span class="error">{{ $message }}</span> @enderror
 
-    <button type="submit">Save Photo</button>
-</form>
+        <button type="submit">Save Photo</button>
+    </form>
+<footer class="font-italic">© 2021</footer>
 </div>

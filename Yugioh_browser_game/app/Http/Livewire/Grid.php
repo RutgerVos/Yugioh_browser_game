@@ -23,7 +23,7 @@ class Grid extends Component
         // ]);
         
         $this->photo->storeAs('photos','render'.Auth::id().'.png');
-        $this->photo = "";
+        $this->reset('photo');
     }
 
     public function increment()
