@@ -15,11 +15,12 @@ class Grid extends Component
 
     public $count = 0;
     public $photo;
+    public $numbers;
 
     public function save()
     {
         // $this->validate([
-        //     'photo' => 'image|max:1024', // 1MB Max
+        //     'photo' => 'image|max:2048', // 2MB Max
         // ]);
         
         $this->photo->storeAs('photos','render'.Auth::id().'.png');

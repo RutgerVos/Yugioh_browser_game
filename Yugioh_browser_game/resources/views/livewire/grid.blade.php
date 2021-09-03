@@ -9,7 +9,7 @@
       <button wire:click="increment()" class="">+</button>
       <button wire:click="decrement()">-</button>
       <div wire:loading.inline>
-          Processing Add....
+          Processing change....
       </div>
     </div>
     <form wire:submit.prevent="save">
