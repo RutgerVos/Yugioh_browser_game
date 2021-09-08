@@ -19,9 +19,9 @@ class Grid extends Component
 
     public function save()
     {
-        // $this->validate([
-        //     'photo' => 'image|max:2048', // 2MB Max
-        // ]);
+        $this->validate([
+            'photo' => 'required', // 2MB Max
+        ]);
         
         $this->photo->storeAs('photos','render'.Auth::id().'.png');
         $this->reset('photo');

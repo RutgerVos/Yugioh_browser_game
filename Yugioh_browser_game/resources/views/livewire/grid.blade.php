@@ -16,13 +16,13 @@
         <!-- <div wire:loading wire:target="photo">Uploading...</div> -->
         @if ($photo)
             Photo Preview:
-            <img src="{{ $photo->temporaryUrl() }}" width="50" height="60">
+            <img src="{{ $photo->temporaryUrl() }}" width="100" height="60">
         @endif
         <input type="file" wire:model="photo" name="photo">
 
         @error('photo') <span class="error">{{ $message }}</span> @enderror
 
-        <button type="submit">Save Photo</button>
+        <button class="bg-white" type="submit" wire:loading.remove>Save Photo</button>
     </form>
 <footer class="font-italic">© 2021</footer>
 </div>
